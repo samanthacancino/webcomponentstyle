@@ -5,8 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>WebComponents</title>
+    <script src="webcomponents/webcomponents-loader.js"></script>
+    <script>
+      if (!window.customElements) {
+        document.write("<!----");
+      }
+    </script>
+    <script src="webcomponents/custom-elements-es5-adapter.js"></script>
+    <!-- ! DO NOT REMOVE THIS COMMENT, WE NEED ITS CLOSSING MARKER -->
   </head>
   <body>
-    <p>Ute papa ute</p>
+    <div class="form">
+      <vaadin-text-field label="First Name" id="firstName"></vaadin-text-field>
+      <vaadin-text-field label="Last Name" id="lastName"></vaadin-text-field>
+      <vaadin-button id="addButton">Add</vaadin-button>
+    </div>
+    <vaadin-grid id="grid">
+      <vaadin-grid-column
+        path="firstName"
+        header="First Name"
+      ></vaadin-grid-column>
+      <vaadin-grid-column
+        path="lastName"
+        header="Last Name"
+      ></vaadin-grid-column>
+    </vaadin-grid>
   </body>
 </html>
